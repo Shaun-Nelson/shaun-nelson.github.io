@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-top: 0.5em;
+    color: white;
+    text-align: center;
+    text-shadow: gray;
+    font-size: 3em;
+}
+
+body{
+    background-image: url('/img/standup.webp');
+    background-size:cover;
+    min-height: 100%;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+}
