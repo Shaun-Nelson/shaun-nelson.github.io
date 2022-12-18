@@ -1,7 +1,7 @@
-API_ENDPOINT = "https://v2.jokeapi.dev/joke/";
-JOKE_TYPE = "?type=single";
-SAFE_MODE = "?safe-mode";
-ELEMENT_ID = "joke";
+const API_ENDPOINT = "https://v2.jokeapi.dev/joke/";
+const JOKE_TYPE = "?type=single";
+const SAFE_MODE = "?safe-mode";
+const ELEMENT_ID = "joke";
 const params = ["blacklistFlags=nsfw,racist,sexist,explicit"];
 
 const getJoke = async () => {
@@ -10,11 +10,15 @@ const getJoke = async () => {
   )
     .then((res) => res.json())
     .then((data) => {
-      if (data.type == "twopart") {
+      if (data.type === "twopart") {
         let result = data.setup + " " + data.delivery;
-        document.getElementById(ELEMENT_ID).innerHTML += result;
+        let element = document.getElementById(ELEMENT_ID);
+        let text = document.createTextNode(result);
+        element.appendChild(text);
       } else {
-        document.getElementById(ELEMENT_ID).innerHTML += data.joke;
+        let element = document.getElementById(ELEMENT_ID);
+        let text = document.createTextNode(data.joke);
+        element.appendChild(text);
       }
     });
 };
